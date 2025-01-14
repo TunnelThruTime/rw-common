@@ -1,0 +1,11 @@
+*.swp
+*.sw[a-z]
+*.sw??
+*.egg-info/
+*.egg-info/*
+myenv/
+__pycache__/
+myenv/*
+__pycache__/*
+./myenv/
+./myenv/*

@@ -9,3 +9,4 @@ myenv/*
 __pycache__/*
 ./myenv/
 ./myenv/*
+.python-version

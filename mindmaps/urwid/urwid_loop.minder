@@ -1,0 +1,551 @@
+<?xml version="1.0"?>
+<minder version="1.16.2" parent-etag="3802795060" etag="2620121492">
+  <theme name="dark" label="Dark" index="4"/>
+  <styles>
+    <style level="0" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="1" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="2" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="3" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="4" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="5" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="6" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="7" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="8" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="9" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+    <style level="10" isset="true" branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="-9" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true" connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100" calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+  </styles>
+  <images/>
+  <nodes>
+    <node id="4" posx="539" posy="459.5" width="33" height="33" side="left" fold="false" treesize="553" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="rw"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="13" posx="672" posy="459.5" width="56" height="33" side="right" fold="false" treesize="553" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Urwid"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="14" posx="828" posy="199.5" width="93" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="Urwid Loop"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="15" posx="828" posy="476" width="106" height="33" side="right" fold="false" treesize="520" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="Urwid Classes"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="16" posx="1034" posy="232.5" width="73" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                  <nodename maxwidth="200">
+                    <text data="RWIzard"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                </node>
+                <node id="18" posx="1034" posy="342.5" width="114" height="33" side="right" fold="false" treesize="187" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                  <nodename maxwidth="200">
+                    <text data="ScreenOptions"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                  <nodes>
+                    <node id="19" posx="1248" posy="342.5" width="180" height="33" side="right" fold="false" treesize="187" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                      <nodename maxwidth="200">
+                        <text data="Parameters (Arguments)"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <nodes>
+                        <node id="20" posx="1528" posy="265.5" width="85" height="33" side="right" fold="false" treesize="137" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="MenuType"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                          <callout>
+                            <text maxwidth="200">
+                              <text data="Used to make options for each window, so that a window can work to perform different operations."/>
+                            </text>
+                            <style calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+                          </callout>
+                          <nodes>
+                            <node id="29" posx="1792" posy="284.5" width="88" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                              <nodename maxwidth="200">
+                                <text data="link_maker"/>
+                              </nodename>
+                              <nodenote></nodenote>
+                            </node>
+                            <node id="30" posx="1792" posy="317.5" width="50" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                              <nodename maxwidth="200">
+                                <text data="basic"/>
+                              </nodename>
+                              <nodenote></nodenote>
+                            </node>
+                            <node id="33" posx="1792" posy="350.5" width="95" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                              <nodename maxwidth="200">
+                                <text data="mdfilemake"/>
+                              </nodename>
+                              <nodenote></nodenote>
+                            </node>
+                          </nodes>
+                        </node>
+                        <node id="22" posx="1528" posy="402.5" width="210" height="50" side="right" fold="false" treesize="50" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="urwid_loop, _used for the loop class_ "/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                      </nodes>
+                    </node>
+                  </nodes>
+                </node>
+                <node id="34" posx="1034" posy="586" width="74" height="33" side="right" fold="false" treesize="300" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                  <nodename maxwidth="200">
+                    <text data="def start"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                  <nodes>
+                    <node id="35" posx="1208" posy="536.5" width="79" height="33" side="right" fold="false" treesize="201" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                      <nodename maxwidth="200">
+                        <text data="Structure"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <nodes>
+                        <node id="38" posx="1387" posy="452.5" width="83" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="MainLoop"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                          <nodes>
+                            <node id="47" posx="1570" posy="452.5" width="71" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                              <nodename maxwidth="200">
+                                <text data="Padding"/>
+                              </nodename>
+                              <nodenote></nodenote>
+                            </node>
+                          </nodes>
+                        </node>
+                        <node id="39" posx="1387" posy="503.5" width="71" height="33" side="right" fold="false" treesize="69" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="Padding"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                          <nodes>
+                            <node id="48" posx="1558" posy="503.5" width="41" height="33" side="right" fold="false" treesize="69" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                              <nodename maxwidth="200">
+                                <text data="Pile"/>
+                              </nodename>
+                              <nodenote></nodenote>
+                              <nodes>
+                                <node id="49" posx="1699" posy="485.5" width="183" height="69" side="right" fold="false" treesize="69" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                                  <nodename maxwidth="200">
+                                    <text data="_Structure Elements:_ `listtype: [banner, listbox]`"/>
+                                  </nodename>
+                                  <nodenote></nodenote>
+                                  <nodes>
+                                    <node id="50" posx="1982" posy="486" width="80" height="34" side="right" fold="false" treesize="34" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                                      <nodename maxwidth="200">
+                                        <text data="`banner`"/>
+                                      </nodename>
+                                      <nodenote></nodenote>
+                                    </node>
+                                    <node id="51" posx="1982" posy="520" width="89" height="34" side="right" fold="false" treesize="34" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                                      <nodename maxwidth="200">
+                                        <text data="`listbox`"/>
+                                      </nodename>
+                                      <nodenote></nodenote>
+                                    </node>
+                                  </nodes>
+                                </node>
+                              </nodes>
+                            </node>
+                          </nodes>
+                        </node>
+                        <node id="40" posx="1387" posy="554.5" width="41" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="Pile"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="41" posx="1387" posy="587.5" width="63" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="ListBox"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="42" posx="1387" posy="620.5" width="50" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="Filler"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                      </nodes>
+                    </node>
+                    <node id="43" posx="1208" posy="686.5" width="143" height="33" side="right" fold="false" treesize="99" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                      <nodename maxwidth="200">
+                        <text data="Structure Elements"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <nodes>
+                        <node id="44" posx="1451" posy="653.5" width="65" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="Header"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="45" posx="1451" posy="686.5" width="50" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="Body"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                        <node id="46" posx="1451" posy="719.5" width="62" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data="Footer"/>
+                          </nodename>
+                          <nodenote></nodenote>
+                        </node>
+                      </nodes>
+                    </node>
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+    <node id="6" posx="526.5" posy="887.00000000000011" width="145" height="33" side="left" fold="false" treesize="190" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="Urwid Construction"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="7" posx="771.5" posy="808.50000000000011" width="93" height="33" side="right" fold="false" treesize="33" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Urwid Loop"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="12" posx="771.5" posy="903.50000000000011" width="106" height="33" side="right" fold="false" treesize="157" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Urwid Classes"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="25" posx="977.5" posy="841.50000000000011" width="73" height="33" side="right" fold="false" treesize="33" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="RWIzard"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="27" posx="977.5" posy="874.50000000000011" width="114" height="33" side="right" fold="false" treesize="33" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="ScreenOptions"/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="28" posx="977.5" posy="907.50000000000011" width="74" height="33" side="right" fold="false" treesize="91" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="def start"/>
+              </nodename>
+              <nodenote></nodenote>
+              <callout>
+                <text maxwidth="200">
+                  <text data="Where the urwid MainLoop is defined and executed"/>
+                </text>
+                <style calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+              </callout>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+    <node id="53" posx="516" posy="1119.5" width="124" height="33" side="right" fold="false" treesize="33" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="Recording Chain"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="54" posx="740" posy="1119.5" width="89" height="33" side="right" fold="false" treesize="33" color="#c6262e" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Main Menu"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="55" posx="929" posy="1119.5" width="131" height="33" side="right" fold="false" treesize="33" color="#c6262e" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="Recording Popup"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="56" posx="1160" posy="1119.5" width="87" height="33" side="right" fold="false" treesize="33" color="#c6262e" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                  <nodename maxwidth="200">
+                    <text data="Link Maker"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                  <nodes>
+                    <node id="57" posx="1347" posy="1119.5" width="89" height="33" side="right" fold="false" treesize="33" color="#c6262e" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                      <nodename maxwidth="200">
+                        <text data="Main Menu"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                    </node>
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+    <node id="59" posx="472.5" posy="1252.5" width="190" height="33" side="right" fold="false" treesize="102" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="Recording Chain Functions"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="60" posx="762.5" posy="1252.5" width="133" height="33" side="right" fold="false" treesize="102" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="show_main_menu"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="61" posx="995.5" posy="1218" width="16" height="33" side="right" fold="false" treesize="33" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data=""/>
+              </nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="62" posx="995.5" posy="1268.5" width="170" height="34" side="right" fold="false" treesize="69" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="`self.on_keypress`"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="63" posx="1265.5" posy="1259.5" width="219" height="52" side="right" fold="false" treesize="69" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                  <nodename maxwidth="200">
+                    <text data="`self.alternative_make_demo(ordinal)`"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                  <nodes>
+                    <node id="64" posx="1584.5" posy="1251" width="134" height="34" side="right" fold="false" treesize="69" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                      <nodename maxwidth="200">
+                        <text data="`handle_input`"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <callout>
+                        <text maxwidth="200">
+                          <text data="follows if statement in 'Q' or 'q'"/>
+                        </text>
+                        <style calloutfont="Sans 12" calloutpadding="-16" calloutptrwidth="20" calloutptrlength="20"/>
+                      </callout>
+                      <nodes>
+                        <node id="65" posx="1846.5" posy="1269" width="16" height="33" side="right" fold="false" treesize="52" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                          <nodename maxwidth="200">
+                            <text data=""/>
+                          </nodename>
+                          <nodenote></nodenote>
+                          <nodes>
+                            <node id="66" posx="1962.5" posy="1259.5" width="210" height="52" side="right" fold="false" treesize="52" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                              <nodename maxwidth="200">
+                                <text data="`show_link_in_link_maker`"/>
+                              </nodename>
+                              <nodenote></nodenote>
+                              <nodes>
+                                <node id="67" posx="2272.5" posy="1268.5" width="197" height="34" side="right" fold="false" treesize="34" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                                  <nodename maxwidth="200">
+                                    <text data="`return_to_main_menu`"/>
+                                  </nodename>
+                                  <nodenote></nodenote>
+                                </node>
+                              </nodes>
+                            </node>
+                          </nodes>
+                        </node>
+                      </nodes>
+                    </node>
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+      </nodes>
+    </node>
+    <node id="68" posx="472.5" posy="1441" width="103" height="33" side="right" fold="false" treesize="33" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="Another Idea"/>
+      </nodename>
+      <nodenote></nodenote>
+    </node>
+    <node id="70" posx="204.58992513020831" posy="1014.0825195312491" width="68" height="33" side="right" fold="false" treesize="33" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="rw start"/>
+      </nodename>
+      <nodenote></nodenote>
+    </node>
+    <node id="71" posx="506.04695638020826" posy="1646.8202311197883" width="106" height="33" side="right" fold="false" treesize="99" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="Update Menu"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="72" posx="712.04695638020826" posy="1613.8202311197883" width="103" height="33" side="right" fold="false" treesize="33" color="#c6262e" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Append song"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="74" posx="712.04695638020826" posy="1646.8202311197883" width="101" height="33" side="right" fold="false" treesize="33" color="#f37329" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Choose Song"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="76" posx="712.04695638020826" posy="1679.8202311197883" width="89" height="33" side="right" fold="false" treesize="33" color="#f9c440" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Print Lyrics"/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+      </nodes>
+    </node>
+    <node id="77" posx="520.04695638020826" posy="1812.8202311197883" width="75" height="33" side="right" fold="false" treesize="189" summarized="false" layout="Horizontal" group="false">
+      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+      <nodename maxwidth="200">
+        <text data="Bug Path"/>
+      </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="78" posx="695.04695638020826" posy="1796.3202311197883" width="131" height="33" side="right" fold="false" treesize="156" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data="Print Lyric Screen"/>
+          </nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="79" posx="926.04695638020826" posy="1796.3202311197883" width="131" height="33" side="right" fold="false" treesize="156" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+              <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+              <nodename maxwidth="200">
+                <text data="Alternate Record"/>
+              </nodename>
+              <nodenote></nodenote>
+              <nodes>
+                <node id="80" posx="1157.0469563802083" posy="1796.3202311197883" width="117" height="33" side="right" fold="false" treesize="156" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                  <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                  <nodename maxwidth="200">
+                    <text data="DisplayOptions"/>
+                  </nodename>
+                  <nodenote></nodenote>
+                  <nodes>
+                    <node id="81" posx="1374.0469563802083" posy="1734.8202311197883" width="89" height="33" side="right" fold="false" treesize="156" color="#68b723" colorroot="false" summarized="false" layout="Horizontal" group="false">
+                      <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="500" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+                      <nodename maxwidth="500">
+                        <text data="Main Menu"/>
+                      </nodename>
+                      <nodenote></nodenote>
+                      <callout>
+                        <text maxwidth="200">
+                          <text data="Bug occurs when self.title is displayed proper but calling print lyric screen shows only the previous song"/>
+                        </text>
+                        <style calloutfont="System-ui 8" calloutpadding="4" calloutptrwidth="10" calloutptrlength="72"/>
+                      </callout>
+                    </node>
+                  </nodes>
+                </node>
+              </nodes>
+            </node>
+          </nodes>
+        </node>
+        <node id="82" posx="695.04695638020826" posy="1890.8202311197883" width="16" height="33" side="right" fold="false" treesize="33" color="#3689e6" colorroot="false" summarized="false" layout="Horizontal" group="false">
+          <style branchmargin="100" branchradius="25" linktype="straight" linkwidth="2" linkarrow="false" linkdash="solid" nodeborder="none" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="1" nodepadding="7" nodefont="Ubuntu 11" nodemarkup="true"/>
+          <nodename maxwidth="200">
+            <text data=""/>
+          </nodename>
+          <nodenote></nodenote>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+  <groups/>
+  <connections>
+    <connection from_id="22" to_id="15" drag_x="1226.106689453125" drag_y="524.4555175781245">
+      <style connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="59" to_id="68" drag_x="545.75" drag_y="1363.25">
+      <style connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="70" to_id="53" drag_x="408.29496256510419" drag_y="1083.2912597656245">
+      <style connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="70" to_id="71" drag_x="329.34187825520837" drag_y="1450.975341796875">
+      <style connectiondash="dotted" connectionlwidth="2" connectionarrow="fromto" connectionpadding="-18" connectionfont="Sans 10" connectiontwidth="100"/>
+      <title></title>
+      <note></note>
+    </connection>
+  </connections>
+  <stickers/>
+  <nodelinks id="0"/>
+</minder>

@@ -1,0 +1,76 @@
+[?1049h[?1006l[?1002l[?1000l[?1000h[?1002h[?1006h[?1006l[?1002l[?1000l[?1049l[?25h
+-------------------------------------------------------------------------------
+rw 8 <module>
+sys.exit(cli())
+
+core.py 1161 __call__
+return self.main(*args, **kwargs)
+
+core.py 1082 main
+rv = self.invoke(ctx)
+
+core.py 1697 invoke
+return _process_result(sub_ctx.command.invoke(sub_ctx))
+
+core.py 1443 invoke
+return ctx.invoke(self.callback, **ctx.params)
+
+core.py 788 invoke
+return __callback(*args, **kwargs)
+
+rwmain.py 716 start
+r.show_main_menu()
+
+rwmain.py 131 show_main_menu
+loop.run()
+
+main_loop.py 337 run
+self._run()
+
+main_loop.py 439 _run
+self.event_loop.run()
+
+select_loop.py 182 run
+self._loop()
+
+select_loop.py 224 _loop
+alarm_callback()
+
+main_loop.py 650 entering_idle
+self.draw_screen()
+
+main_loop.py 667 draw_screen
+canvas = self._topmost_widget.render(self.screen_size, focus=True)
+
+widget.py 112 cached_render
+canv = fn(self, size, focus=focus)
+
+padding.py 342 render
+canv = self._original_widget.render((maxcol,) + size[1:], focus)
+
+widget.py 112 cached_render
+canv = fn(self, size, focus=focus)
+
+pile.py 873 render
+canv = w.render(w_size, focus=focus and item_focus)
+
+widget.py 112 cached_render
+canv = fn(self, size, focus=focus)
+
+widget.py 711 render
+canv = get_delegate(self).render(size, focus=focus)
+
+widget.py 112 cached_render
+canv = fn(self, size, focus=focus)
+
+pile.py 873 render
+canv = w.render(w_size, focus=focus and item_focus)
+
+widget.py 113 cached_render
+validate_size(self, size, canv)
+
+widget.py 92 validate_size
+raise WidgetError(
+
+urwid.widget.widget.WidgetError:
+Widget <Columns fixed/flow widget (3 items) focus_column=1> rendered (20 x 3) canvas when passed size (20, 2)!

@@ -1185,11 +1185,11 @@ def start(setlist, named_setlist):
     main menu
     """
     # breakpoint()
+    global pile, loop, header_title, r
     if named_setlist:
         r = RWizard(named_setlist=named_setlist)
     else:
         r = RWizard()
-    global pile, loop, header_title
     r.show_main_menu()
     # listbox_content = []
     # header_title = setlist[0] if setlist else None 

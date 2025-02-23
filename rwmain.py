@@ -114,18 +114,28 @@ class RWizard():
 
     """ """
 
-    def __init__(self, setlist=None):
+    def __init__(self, setlist_values=None, named_setlist=None):
 
         """  """
         self.rec_dest = config.get('dirs', 'recording_dir')
         self.lyrics_bin = config.get('dirs', 'lyrics_bin')
         if config.has_option('dirs', 'lilypond_dir'):
             self.lilypond_dir = config.get('dirs', 'lilypond_dir')
-        if not setlist:
+        if not setlist_values and not named_setlist:
             values = str(config.get('setlist', 'static')).split(', ')
             self.setlist = [ str(x).strip() for x in values ]
+        elif not setlist_values and named_setlist:
+            # Check if the option exists in the specified section
+            section_name = 'setlist'
+            if named_setlist in config[section_name]:
+                # print(f"The option '{option_name}' exists in section '{section_name}'.")
+                values = str(config.get('setlist', named_setlist)).split(', ')
+                self.setlist = [ str(x).strip() for x in values ]
+            else:
+                print(f"The option '{named_setlist}' does not exist in section '{section_name}'.")
+                sys.exit()
         else:
-            self.setlist = setlist
+            self.setlist = setlist_values
             assert isinstance(self.setlist, [list, tuple]), 'RWizard: setlist error: not a list or tuple'
         self.index = 0
         self.title = self.setlist[self.index]
@@ -1029,7 +1039,6 @@ class ScreenOptions:
 # beginning the main block of click, urwid code logic
 #
 #
-r = RWizard()
 # calling the wizard
 # because it contains an iterator that can cycle only if its instanciazed outside of main loops
 @click.group()
@@ -1170,15 +1179,17 @@ def on_keypress(key):
 
 @cli.command()
 @click.argument('setlist', nargs=-1, required=False)
-def start(setlist):
+@click.option('-s', '--config-setlist', 'named_setlist', default=None, help='use configured setlist')
+def start(setlist, named_setlist):
     """
     main menu
     """
     # breakpoint()
+    if named_setlist:
+        r = RWizard(named_setlist=named_setlist)
+    else:
+        r = RWizard()
     global pile, loop, header_title
-    if not setlist:
-        values = str(config.get('setlist', 'static')).split(', ')
-        setlist = [ str(x).strip() for x in values ] 
     r.show_main_menu()
     # listbox_content = []
     # header_title = setlist[0] if setlist else None 

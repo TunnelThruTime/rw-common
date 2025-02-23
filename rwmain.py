@@ -19,6 +19,11 @@ basic_config = """
 recording_dir = 
 lyrics_bin =
 lilypond_dir = 
+[recording_settings]
+countdown =
+# if recording command is empty default command will be used
+# default command is `rec -d -V4`
+rec_cmd =
 [submenu_config]
 use_less = yes
 [setlist]
@@ -524,7 +529,10 @@ class RWizard():
         # | shell=False | records audio with blank text displayed |
         # 
         #
-        self.process = Popen(['rec', '-d', '-V4', proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
+        if len(config.get('recording_settings', 'rec_cmd' )) > 0:
+            self.process = Popen( config.get('recording_settings', 'rec_cmd').split() + [proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
+        else:
+            self.process = Popen(['rec', '-d', '-V4', proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
         # self.process = subprocess.Popen(f'rec {proxy_file}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         self.recording_counter_update_function = True

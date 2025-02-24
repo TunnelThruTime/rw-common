@@ -151,6 +151,11 @@ class RWizard():
         self.recording_counter_update_function = False
         self.alarm_handle = None
         self.timer_text = ""
+        if len(config.get('recording_settings', 'countdown')) > 0:
+            self.countdown_delay = int(config.get('recording_settings', 'countdown'))
+        else:
+            self.countdown_delay = 2
+
     def __iter__(self):
         return self
 
@@ -419,7 +424,7 @@ class RWizard():
             elif key == 'v':
                 self.show_view_lilypond_menu()
             elif key == 'a':
-                urwid_timer(2)
+                urwid_timer(self.countdown_delay)
                 title, ordinal = next(iter(self)) 
                 self.alternative_make_demo(ordinal)
 
@@ -626,7 +631,11 @@ class RWizard():
         elif k == 'y':
             self.make_demo(self.index)
         elif key == 'a':
-            vapor_timer(2)
+            # if len(config.get('recording_settings', 'countdown')) > 0:
+                # countdown_delay = int(config.get('recording_settings', 'countdown'))
+            # else:
+                # countdown_delay = 2
+            vapor_timer(self.countdown_delay)
             title, ordinal = next(iter(self)) 
             self.inline_printlyricscreen_make_demo(ordinal)
 

@@ -374,51 +374,54 @@ class RWizard():
     # main_menu on keypress function {{{ #
     
     def on_keypress(self, key):
-        key = key.lower()
-        if key in ['q', 'Q']:
-            raise urwid.ExitMainLoop()
-            # sys.exit(0)
-        elif key in ['Y', 'y']:
-            print("Start recording")
+        if isinstance(key, tuple):
+            pass
+        else:
+            key = key.lower()
+            if key in ['q', 'Q']:
+                raise urwid.ExitMainLoop()
+                # sys.exit(0)
+            elif key in ['Y', 'y']:
+                print("Start recording")
 
 
-            urwid_timer(10)
-            title, ordinal = next(iter(r))
-            # r.title, r.index = title, ordinal
-            self.make_demo(ordinal)
-        elif key == 'p':
-            print("Print lyrics")
-            self.show_lyrics_screen()
-        elif key == 'e':
-            print("Create/edit lyrics")
-            self.edit_setlist_item_file(self.title, ftype='md')
+                urwid_timer(10)
+                title, ordinal = next(iter(r))
+                # r.title, r.index = title, ordinal
+                self.make_demo(ordinal)
+            elif key == 'p':
+                print("Print lyrics")
+                self.show_lyrics_screen()
+            elif key == 'e':
+                print("Create/edit lyrics")
+                self.edit_setlist_item_file(self.title, ftype='md')
 
 
-        elif key == 'l':
-            print("Listen to previous recording")
-        elif key == 'm':
-            print("Manual page viewer")
-        elif key == 'o':
-            print("Open associated reaper project")
-        elif key == 's':
-            title, ordinal = next(iter(self))
-            self.refresh()
-            # self.title, self.index = title, ordinal
-            self.show_main_menu()
-        elif key == 't':
-            print("Open a tracklisting player loop")
-            list_of_tracks = self.make_tracklisting()
-            self.show_tracklist_display(list_of_tracks)
-        elif key == 'u':
-            self.show_update_setlist_menu()
-        elif key == 'w':
-            self.add_linebox_to_main_menu_pile()
-        elif key == 'v':
-            self.show_view_lilypond_menu()
-        elif key == 'a':
-            urwid_timer(2)
-            title, ordinal = next(iter(self)) 
-            self.alternative_make_demo(ordinal)
+            elif key == 'l':
+                print("Listen to previous recording")
+            elif key == 'm':
+                print("Manual page viewer")
+            elif key == 'o':
+                print("Open associated reaper project")
+            elif key == 's':
+                title, ordinal = next(iter(self))
+                self.refresh()
+                # self.title, self.index = title, ordinal
+                self.show_main_menu()
+            elif key == 't':
+                print("Open a tracklisting player loop")
+                list_of_tracks = self.make_tracklisting()
+                self.show_tracklist_display(list_of_tracks)
+            elif key == 'u':
+                self.show_update_setlist_menu()
+            elif key == 'w':
+                self.add_linebox_to_main_menu_pile()
+            elif key == 'v':
+                self.show_view_lilypond_menu()
+            elif key == 'a':
+                urwid_timer(2)
+                title, ordinal = next(iter(self)) 
+                self.alternative_make_demo(ordinal)
 
 # Here is a writeup on the usage for the first menu
 #
@@ -498,7 +501,8 @@ class RWizard():
             elapsed_time = datetime.datetime.now() - self.start_time
             hours, remainder = divmod(elapsed_time.seconds, 3600)
             minutes, seconds = divmod(remainder, 60)
-            timer_text = f"Time Elapsed: {hours:02d}:{minutes:02d}:{seconds:02d}"
+            process_status = self.process.poll()
+            timer_text = f"Time Elapsed: {hours:02d}:{minutes:02d}:{seconds:02d}\nStatus: {process_status}"
 
             # spinner_text = self.spinner.set_text(f"{timer_text}        ")
 

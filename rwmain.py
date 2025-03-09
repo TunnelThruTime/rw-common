@@ -19,6 +19,11 @@ basic_config = """
 recording_dir = 
 lyrics_bin =
 lilypond_dir = 
+[recording_settings]
+countdown =
+# if recording command is empty default command will be used
+# default command is `rec -d -V4`
+rec_cmd =
 [submenu_config]
 use_less = yes
 [setlist]
@@ -114,18 +119,28 @@ class RWizard():
 
     """ """
 
-    def __init__(self, setlist=None):
+    def __init__(self, setlist_values=None, named_setlist=None):
 
         """  """
         self.rec_dest = config.get('dirs', 'recording_dir')
         self.lyrics_bin = config.get('dirs', 'lyrics_bin')
         if config.has_option('dirs', 'lilypond_dir'):
             self.lilypond_dir = config.get('dirs', 'lilypond_dir')
-        if not setlist:
+        if not setlist_values and not named_setlist:
             values = str(config.get('setlist', 'static')).split(', ')
             self.setlist = [ str(x).strip() for x in values ]
+        elif not setlist_values and named_setlist:
+            # Check if the option exists in the specified section
+            section_name = 'setlist'
+            if named_setlist in config[section_name]:
+                # print(f"The option '{option_name}' exists in section '{section_name}'.")
+                values = str(config.get('setlist', named_setlist)).split(', ')
+                self.setlist = [ str(x).strip() for x in values ]
+            else:
+                print(f"The option '{named_setlist}' does not exist in section '{section_name}'.")
+                sys.exit()
         else:
-            self.setlist = setlist
+            self.setlist = setlist_values
             assert isinstance(self.setlist, [list, tuple]), 'RWizard: setlist error: not a list or tuple'
         self.index = 0
         self.title = self.setlist[self.index]
@@ -136,6 +151,11 @@ class RWizard():
         self.recording_counter_update_function = False
         self.alarm_handle = None
         self.timer_text = ""
+        if len(config.get('recording_settings', 'countdown')) > 0:
+            self.countdown_delay = int(config.get('recording_settings', 'countdown'))
+        else:
+            self.countdown_delay = 2
+
     def __iter__(self):
         return self
 
@@ -359,51 +379,54 @@ class RWizard():
     # main_menu on keypress function {{{ #
     
     def on_keypress(self, key):
-        key = key.lower()
-        if key in ['q', 'Q']:
-            raise urwid.ExitMainLoop()
-            # sys.exit(0)
-        elif key in ['Y', 'y']:
-            print("Start recording")
+        if isinstance(key, tuple):
+            pass
+        else:
+            key = key.lower()
+            if key in ['q', 'Q']:
+                raise urwid.ExitMainLoop()
+                # sys.exit(0)
+            elif key in ['Y', 'y']:
+                print("Start recording")
 
 
-            urwid_timer(10)
-            title, ordinal = next(iter(r))
-            # r.title, r.index = title, ordinal
-            self.make_demo(ordinal)
-        elif key == 'p':
-            print("Print lyrics")
-            self.show_lyrics_screen()
-        elif key == 'e':
-            print("Create/edit lyrics")
-            self.edit_setlist_item_file(self.title, ftype='md')
+                urwid_timer(10)
+                title, ordinal = next(iter(r))
+                # r.title, r.index = title, ordinal
+                self.make_demo(ordinal)
+            elif key == 'p':
+                print("Print lyrics")
+                self.show_lyrics_screen()
+            elif key == 'e':
+                print("Create/edit lyrics")
+                self.edit_setlist_item_file(self.title, ftype='md')
 
 
-        elif key == 'l':
-            print("Listen to previous recording")
-        elif key == 'm':
-            print("Manual page viewer")
-        elif key == 'o':
-            print("Open associated reaper project")
-        elif key == 's':
-            title, ordinal = next(iter(self))
-            self.refresh()
-            # self.title, self.index = title, ordinal
-            self.show_main_menu()
-        elif key == 't':
-            print("Open a tracklisting player loop")
-            list_of_tracks = self.make_tracklisting()
-            self.show_tracklist_display(list_of_tracks)
-        elif key == 'u':
-            self.show_update_setlist_menu()
-        elif key == 'w':
-            self.add_linebox_to_main_menu_pile()
-        elif key == 'v':
-            self.show_view_lilypond_menu()
-        elif key == 'a':
-            urwid_timer(2)
-            title, ordinal = next(iter(self)) 
-            self.alternative_make_demo(ordinal)
+            elif key == 'l':
+                print("Listen to previous recording")
+            elif key == 'm':
+                print("Manual page viewer")
+            elif key == 'o':
+                print("Open associated reaper project")
+            elif key == 's':
+                title, ordinal = next(iter(self))
+                self.refresh()
+                # self.title, self.index = title, ordinal
+                self.show_main_menu()
+            elif key == 't':
+                print("Open a tracklisting player loop")
+                list_of_tracks = self.make_tracklisting()
+                self.show_tracklist_display(list_of_tracks)
+            elif key == 'u':
+                self.show_update_setlist_menu()
+            elif key == 'w':
+                self.add_linebox_to_main_menu_pile()
+            elif key == 'v':
+                self.show_view_lilypond_menu()
+            elif key == 'a':
+                urwid_timer(self.countdown_delay)
+                title, ordinal = next(iter(self)) 
+                self.alternative_make_demo(ordinal)
 
 # Here is a writeup on the usage for the first menu
 #
@@ -483,7 +506,8 @@ class RWizard():
             elapsed_time = datetime.datetime.now() - self.start_time
             hours, remainder = divmod(elapsed_time.seconds, 3600)
             minutes, seconds = divmod(remainder, 60)
-            timer_text = f"Time Elapsed: {hours:02d}:{minutes:02d}:{seconds:02d}"
+            process_status = self.process.poll()
+            timer_text = f"Time Elapsed: {hours:02d}:{minutes:02d}:{seconds:02d}\nStatus: {process_status}"
 
             # spinner_text = self.spinner.set_text(f"{timer_text}        ")
 
@@ -514,7 +538,10 @@ class RWizard():
         # | shell=False | records audio with blank text displayed |
         # 
         #
-        self.process = Popen(['rec', '-d', '-V4', proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
+        if len(config.get('recording_settings', 'rec_cmd' )) > 0:
+            self.process = Popen( config.get('recording_settings', 'rec_cmd').split() + [proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
+        else:
+            self.process = Popen(['rec', '-d', '-V4', proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
         # self.process = subprocess.Popen(f'rec {proxy_file}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         self.recording_counter_update_function = True
@@ -604,7 +631,11 @@ class RWizard():
         elif k == 'y':
             self.make_demo(self.index)
         elif key == 'a':
-            vapor_timer(2)
+            # if len(config.get('recording_settings', 'countdown')) > 0:
+                # countdown_delay = int(config.get('recording_settings', 'countdown'))
+            # else:
+                # countdown_delay = 2
+            vapor_timer(self.countdown_delay)
             title, ordinal = next(iter(self)) 
             self.inline_printlyricscreen_make_demo(ordinal)
 
@@ -1029,7 +1060,6 @@ class ScreenOptions:
 # beginning the main block of click, urwid code logic
 #
 #
-r = RWizard()
 # calling the wizard
 # because it contains an iterator that can cycle only if its instanciazed outside of main loops
 @click.group()
@@ -1170,15 +1200,17 @@ def on_keypress(key):
 
 @cli.command()
 @click.argument('setlist', nargs=-1, required=False)
-def start(setlist):
+@click.option('-s', '--config-setlist', 'named_setlist', default=None, help='use configured setlist')
+def start(setlist, named_setlist):
     """
     main menu
     """
     # breakpoint()
-    global pile, loop, header_title
-    if not setlist:
-        values = str(config.get('setlist', 'static')).split(', ')
-        setlist = [ str(x).strip() for x in values ] 
+    global pile, loop, header_title, r
+    if named_setlist:
+        r = RWizard(named_setlist=named_setlist)
+    else:
+        r = RWizard()
     r.show_main_menu()
     # listbox_content = []
     # header_title = setlist[0] if setlist else None 

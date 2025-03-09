@@ -11,6 +11,9 @@ filename: README.md
 rw is a cli to port the function rec_wizard into python. As the name suggests this rec_wizard
 helps the user record demos by making a queue for them to use.
 
+![demo](./demo_cast_2.gif)
+
+
 Essentially the user will configuration their `$HOME/.config/rw-common/config.ini`, to have 
 a queue of comma separated songs, `Song 1, Song 2, Song3`, and then the user will also
 need to setup a dir to store their lyrics for these songs and a dir for their lilypond notes.

@@ -175,12 +175,23 @@ class RWizard():
             self.index += 1
             return value, rindex
         else:
-            raise StopIteration
+            # raise urwid.ExitMainLoop()
+            print('List of songs finished\nExiting ...')
+            sys.exit(1)
+            # raise StopIteration
 
     def refresh(self):
         """ refreshes init vars
         """
-        self.title = self.setlist[self.index]
+        try:
+            self.title = self.setlist[self.index]
+        except IndexError as e:
+            # print(f'exiting ... {e}')
+            # I've found today, 2025-04-02, that the urwid instance needs
+            # to be exited before the sys.exit can be called
+            #
+            # Exit from system is called when __next__ gets its next call
+            raise urwid.ExitMainLoop()
 
     def append_setlist(item):
         assert isinstance(item, list), 'TypeError: item is not list type'
@@ -413,6 +424,8 @@ class RWizard():
                 self.refresh()
                 # self.title, self.index = title, ordinal
                 self.show_main_menu()
+            # elif key == 'r':
+                # print('bobontesriotnsersi')
             elif key == 't':
                 print("Open a tracklisting player loop")
                 list_of_tracks = self.make_tracklisting()

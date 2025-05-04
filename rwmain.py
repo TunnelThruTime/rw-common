@@ -114,15 +114,64 @@ lilypond_menu = [
     ("Qq", "Quit"),
 ]
 
+class SetRecordingDir():
+    def __init__(self, setlist_values=None, named_setlist=None):
+        if not setlist_values and not named_setlist:
+            # keep rec_destination as from config
+            self.rec_dest = config.get('dirs', 'recording_dir')
+        elif setlist_values and not name_setlist:
+            # keep rec_destination as from config
+            self.rec_dest = config.get('dirs', 'recording_dir')
+        elif not setlist_values and named_setlist:
+            _stop = self.set_recording_dir(named_setlist) 
+            if _stop:
+                self.rec_dest = _stop
+            else:
+                self.rec_dest = config.get('dirs', 'recording_dir')
+        elif setlist_values and named_setlist:
+            raise AttributeError
 
-class RWizard():
+    def _is_in_options(self, value, debug=""):
+        """ verifies, and returns the value if it is matching in
+            both as option in section setlist and as section in the config file
+        """
+        # loop
+        for x in config.options('setlist'):
+            if debug.count('v') >= 1:
+                print(x)
+            if value in config.sections():
+                return value
+            else:
+                pass
+        return False
+
+    def set_recording_dir(self, value):
+        result = self._is_in_options(value)
+        if result:
+            recdir = config.get(result, 'recording_dir')
+            return recdir
+        else:
+            return False
+
+class RWizard(SetRecordingDir):
 
     """ """
 
     def __init__(self, setlist_values=None, named_setlist=None):
+        super().__init__(setlist_values, named_setlist)
 
         """  """
-        self.rec_dest = config.get('dirs', 'recording_dir')
+        # named_setlist defines the option in config
+        #
+        # | sit              | default            | rec_dir |
+        # |------------------+--------------------+---------|
+        # | no named setlist | using static       |         |
+        # | named setlist    | use namede setlist |         |
+        # |
+        #
+        #
+
+        # self.rec_dest = config.get('dirs', 'recording_dir')
         self.lyrics_bin = config.get('dirs', 'lyrics_bin')
         if config.has_option('dirs', 'lilypond_dir'):
             self.lilypond_dir = config.get('dirs', 'lilypond_dir')

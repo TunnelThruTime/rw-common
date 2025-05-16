@@ -153,7 +153,100 @@ class SetRecordingDir():
         else:
             return False
 
-class RWizard(SetRecordingDir):
+class HandleRecordings():
+
+    def alternative_make_demo(self, v):
+        """ adds linebox to main menu pile that working for 
+            v where v is the index of an element in self.setlist
+            v:
+                element in setlist
+        """
+        # make)demo essentials
+
+        x = self.setlist[v]
+        self.current_setlist_item_name = x
+        # print(x)
+
+
+
+        self.start_time = datetime.datetime.now()
+        self.spinner = urwid.Text("Recording...")
+
+        def update_text(loop=None, data=None):
+            elapsed_time = datetime.datetime.now() - self.start_time
+            hours, remainder = divmod(elapsed_time.seconds, 3600)
+            minutes, seconds = divmod(remainder, 60)
+            process_status = self.process.poll()
+            timer_text = f"Time Elapsed: {hours:02d}:{minutes:02d}:{seconds:02d}\nError: {process_status}\nNotes:"
+
+            # spinner_text = self.spinner.set_text(f"{timer_text}        ")
+
+            # Replace the existing text with the updated timer text
+            if self.timer_text:
+                self.text_box.body.pop(0)  # Remove the existing line
+            self.text_box.body.insert(0, urwid.Text(timer_text))
+            self.timer_text = timer_text
+            
+            self.alarm_handle = loop.set_alarm_in(1, update_text)  # Update text every 0.1 seconds
+
+            
+
+
+
+        directory_path = os.path.join(self.rec_dest, 
+            f"recordings/demos/sessions/{datetime.datetime.now().strftime('%F')}/{x} - Takes Directory")
+        os.makedirs(directory_path, exist_ok=True)
+
+        proxy_file = os.path.join(directory_path, f"{x} {subprocess.run(['openssl', 'rand', '-hex', '5'], capture_output=True, text=True).stdout.strip()}.ogg")
+        self.current_setlist_item_filepath = proxy_file
+        assert len(proxy_file) > 0, 'proxy_file var not set'
+        
+        # self.process Popen rec seems to only work under specific conditions:
+        # | condition   | result                                  |
+        # |-------------+-----------------------------------------|
+        # | shell=True  | long error message                      |
+        # | shell=False | records audio with blank text displayed |
+        # 
+        #
+        while True:
+            try:
+                if len(config.get('recording_settings', 'rec_cmd' )) > 0:
+                    self.process = Popen( config.get('recording_settings', 'rec_cmd').split() + [proxy_file], shell=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    # <TunnelThruTime>: 2025-05-06
+                    # above I have set the stdout, and stderr to subprocess.DEVNULL
+                    # which tosses out the excess bytes
+                    # This was a bug fix for recording mysterously stopping at 2m15s into the recroding
+                    # You will fine the code in both sections of this clause
+                else:
+                    self.process = Popen(['rec', '-d', '-V4', proxy_file], shell=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                # self.process = subprocess.Popen(f'rec {proxy_file}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+                self.recording_counter_update_function = True
+                linebox = urwid.LineBox(self.text_box)
+
+                pile.contents.append((linebox, pile.options()))  # Append LineBox to Pile
+
+                padding = urwid.Padding(pile, left=2, right=2)
+                loop = urwid.MainLoop(padding, unhandled_input=self.handle_input)
+                # going to test buffer overload theory by lengthening the interval
+                # 2025-05-04
+                loop.set_alarm_in(1.5, update_text)  # Update text every 0.1 seconds
+                loop.run()
+                if self.process_status is not None:
+                    raise urwid.ExitMainLoop()
+                    break
+            except KeyboardInterrupt:
+                self.process.terminate()
+                urwid.ExitMainLoop()
+                break
+            except subprocess.CalledProcessError as exc:
+                urwid.ExitMainLoop()
+                raise exc
+                break
+
+
+
+class RWizard(SetRecordingDir, HandleRecordings):
 
     """ """
 
@@ -550,72 +643,6 @@ class RWizard(SetRecordingDir):
         loop.run()
     # 1}}} #
 
-    def alternative_make_demo(self, v):
-        """ adds linebox to main menu pile that working on 04:24
-        """
-        # make)demo essentials
-
-        x = self.setlist[v]
-        self.current_setlist_item_name = x
-        # print(x)
-
-
-
-        self.start_time = datetime.datetime.now()
-        self.spinner = urwid.Text("Recording...")
-
-        def update_text(loop=None, data=None):
-            elapsed_time = datetime.datetime.now() - self.start_time
-            hours, remainder = divmod(elapsed_time.seconds, 3600)
-            minutes, seconds = divmod(remainder, 60)
-            process_status = self.process.poll()
-            timer_text = f"Time Elapsed: {hours:02d}:{minutes:02d}:{seconds:02d}\nStatus: {process_status}"
-
-            # spinner_text = self.spinner.set_text(f"{timer_text}        ")
-
-            # Replace the existing text with the updated timer text
-            if self.timer_text:
-                self.text_box.body.pop(0)  # Remove the existing line
-            self.text_box.body.insert(0, urwid.Text(timer_text))
-            self.timer_text = timer_text
-            
-            self.alarm_handle = loop.set_alarm_in(1, update_text)  # Update text every 0.1 seconds
-
-            
-
-
-
-        directory_path = os.path.join(self.rec_dest, 
-            f"recordings/demos/sessions/{datetime.datetime.now().strftime('%F')}/{x} - Takes Directory")
-        os.makedirs(directory_path, exist_ok=True)
-
-        proxy_file = os.path.join(directory_path, f"{x} {subprocess.run(['openssl', 'rand', '-hex', '5'], capture_output=True, text=True).stdout.strip()}.ogg")
-        self.current_setlist_item_filepath = proxy_file
-        assert len(proxy_file) > 0, 'proxy_file var not set'
-        
-        # self.process Popen rec seems to only work under specific conditions:
-        # | condition   | result                                  |
-        # |-------------+-----------------------------------------|
-        # | shell=True  | long error message                      |
-        # | shell=False | records audio with blank text displayed |
-        # 
-        #
-        if len(config.get('recording_settings', 'rec_cmd' )) > 0:
-            self.process = Popen( config.get('recording_settings', 'rec_cmd').split() + [proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
-        else:
-            self.process = Popen(['rec', '-d', '-V4', proxy_file], shell=False, stdout=PIPE, stderr=PIPE)
-        # self.process = subprocess.Popen(f'rec {proxy_file}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-        self.recording_counter_update_function = True
-        linebox = urwid.LineBox(self.text_box)
-
-        pile.contents.append((linebox, pile.options()))  # Append LineBox to Pile
-
-        padding = urwid.Padding(pile, left=2, right=2)
-        loop = urwid.MainLoop(padding, unhandled_input=self.handle_input)
-        loop.set_alarm_in(0.1, update_text)  # Update text every 0.1 seconds
-        loop.run()
-
 
 
     def show_link_maker_menu(self):
@@ -988,18 +1015,28 @@ class RWizard(SetRecordingDir):
         # signal.signal(signal.SIGINT, self.signal_handler)
         p = subprocess.Popen(['rec', proxy_file])
 
-
         try:
-            while p.poll() is None:
+            while True:
+                # Check if the process has terminated
+                return_code = p.poll()
+                if return_code is not None:
+                    print(f"Process terminated with code {return_code}")
+                    break
+                
+                # Use select to check for keyboard input with a timeout
                 i, o, e = select.select([sys.stdin], [], [], 1)
                 if i:
-                    # If there is keyboard input, stop the recording process
                     userInput = sys.stdin.read(1)
                     if userInput.lower() == 'q':
                         p.terminate()
+                        print("Terminating recording process...")
                         break
+                
+                # Optionally, you can add a small delay to avoid busy-waiting
+                time.sleep(0.1)
         except KeyboardInterrupt:
-            pass
+            print("Keyboard interrupt detected. Terminating recording process...")
+            p.terminate()
         # # Wait for a specific keypress before stopping recording
         # print("Press 'Q' to stop the recording...")
         # keyboard.wait('Q')
@@ -1289,6 +1326,17 @@ def start(setlist, named_setlist):
     # padding = urwid.Padding(pile, left=2, right=2)
     # loop = urwid.MainLoop(padding, unhandled_input=on_keypress)
     # loop.run()
+
+
+@cli.command()
+def setlists():
+    """
+    :returns: TODO
+
+    """
+    # TODO: remove debug message from output <07-05-25, TunnelThruTime> #
+    for x in config['setlist'].keys():
+        print(x)
 
 @cli.command()
 def defunct_menu():
